@@ -36,6 +36,12 @@ class App extends Component {
     this.setState({ input: ""})
   }
 
+  add = () => {
+    this.state.previousNumber = this.state.input;
+    this.setState({ input: "" });
+    this.state.operator = "plus";
+  } 
+
   render() {
     return (
       <div className="App">
@@ -59,7 +65,7 @@ class App extends Component {
             <Button handleClick={this.addToInput}>1</Button>
             <Button handleClick={this.addToInput}>2</Button>
             <Button handleClick={this.addToInput}>3</Button>
-            <Button>+</Button>
+            <Button handleClick={this.add}>+</Button>
           </div>
           <div className="row">
             <Button handleClick={this.addDecimal}>.</Button>
