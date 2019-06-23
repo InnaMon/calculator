@@ -26,7 +26,11 @@ class App extends Component {
     }
   }
 
-  
+  addDecimal = val => {
+    if (this.state.input.indexOf(".") === -1) {
+      this.setState({ input: this.state.input + val })
+    }
+  }
 
   render() {
     return (
