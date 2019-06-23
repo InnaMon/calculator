@@ -6,6 +6,20 @@ import ClearButton from './ClearButton';
 
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      input: "",
+      previousNumber: "",
+      currentNumber: "",
+      operator: ""
+    };
+  }
+
+  addToInput = val => {
+    this.setState({ input: this.state.input + val });
+  }
+
   render() {
     return (
       <div className="App">
@@ -14,7 +28,7 @@ class App extends Component {
           <Input></Input>
           </div>
           <div className="row">
-            <Button>7</Button>
+            <Button handleClick={this.addToInput}>7</Button>
             <Button>8</Button>
             <Button>9</Button>
             <Button>/</Button>
