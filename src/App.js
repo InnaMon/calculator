@@ -42,6 +42,17 @@ class App extends Component {
     this.state.operator = "plus";
   } 
 
+  evaluate = () => {
+    this.state.currentNumber = this.state.input;
+
+    if (this.state.operator === "plus") {
+      this.setState({
+        input: parseInt(this.state.previousNumber) + 
+        parseInt(this.state.currentNumber)
+      });
+    }
+  }
+
   render() {
     return (
       <div className="App">
@@ -70,7 +81,7 @@ class App extends Component {
           <div className="row">
             <Button handleClick={this.addDecimal}>.</Button>
             <Button handleClick={this.addZeroToInput}>0</Button>
-            <Button>=</Button>
+            <Button handleClick={this.evaluate}>=</Button>
             <Button>-</Button>
           </div>
           <div className="row">
