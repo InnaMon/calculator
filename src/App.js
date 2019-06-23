@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import Button from './Button';
 import Input from './Input';
+import ClearButton from './ClearButton';
+
 
 class App extends Component {
   render() {
@@ -34,6 +36,9 @@ class App extends Component {
             <Button>0</Button>
             <Button>=</Button>
             <Button>-</Button>
+          </div>
+          <div className="row">
+            <ClearButton>Clear</ClearButton>
           </div>
         </div>
       </div>
