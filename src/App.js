@@ -64,27 +64,33 @@ class App extends Component {
 
   evaluate = () => {
     this.state.currentNumber = this.state.input;
-
-    if (this.state.operator === "plus") {
-      this.setState({
-        input: parseFloat(this.state.previousNumber) + 
-        parseFloat(this.state.currentNumber)
-      });
-    } else if (this.state.operator === "subtract") {
-      this.setState({
-        input: parseFloat(this.state.previousNumber) - 
-        parseFloat(this.state.currentNumber)
-      });
-    } else if (this.state.operator === "multiply") {
-      this.setState({
-        input: parseFloat(this.state.previousNumber) * 
-        parseFloat(this.state.currentNumber)
-      });
-    } else if (this.state.operator === "divide") {
-      this.setState({
-        input: parseFloat(this.state.previousNumber) / 
-        parseFloat(this.state.currentNumber)
-      });
+    switch (this.state.operator) {
+      case "plus":
+        this.setState({
+          input: parseFloat(this.state.previousNumber) + 
+          parseFloat(this.state.currentNumber)
+        });
+        break;
+      case "subtract":
+        this.setState({
+          input: parseFloat(this.state.previousNumber) - 
+          parseFloat(this.state.currentNumber)
+        });
+        break;
+      case "multiply":
+        this.setState({
+          input: parseFloat(this.state.previousNumber) * 
+          parseFloat(this.state.currentNumber)
+        });
+        break;
+      case "divide":
+        this.setState({
+          input: parseFloat(this.state.previousNumber) / 
+          parseFloat(this.state.currentNumber)
+        });
+        break;
+      default:
+        console.log("no operator identified");
     }
   }
 
