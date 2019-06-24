@@ -20,8 +20,6 @@ class App extends Component {
     this.setState({ input: this.state.input + val });
   }
 
-  //TO DO: add functionality so that operator shows up in Input
-
   addZeroToInput = val => {
     if (this.state.input !== "") {
       this.setState({ input: this.state.input + val })
@@ -93,10 +91,6 @@ class App extends Component {
         console.log("no operator identified");
     }
   }
-
-  //TO DO refactor code to have less repeated if else statements
-
-  //parseInt is not recognizing the decimal
 
   render() {
     return (
