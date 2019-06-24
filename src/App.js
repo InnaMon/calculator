@@ -65,26 +65,28 @@ class App extends Component {
 
     if (this.state.operator === "plus") {
       this.setState({
-        input: parseInt(this.state.previousNumber) + 
-        parseInt(this.state.currentNumber)
+        input: parseFloat(this.state.previousNumber) + 
+        parseFloat(this.state.currentNumber)
       });
     } else if (this.state.operator === "subtract") {
       this.setState({
-        input: parseInt(this.state.previousNumber) - 
-        parseInt(this.state.currentNumber)
+        input: parseFloat(this.state.previousNumber) - 
+        parseFloat(this.state.currentNumber)
       });
     } else if (this.state.operator === "multiply") {
       this.setState({
-        input: parseInt(this.state.previousNumber) * 
-        parseInt(this.state.currentNumber)
+        input: parseFloat(this.state.previousNumber) * 
+        parseFloat(this.state.currentNumber)
       });
     } else if (this.state.operator === "divide") {
       this.setState({
-        input: parseInt(this.state.previousNumber) / 
-        parseInt(this.state.currentNumber)
+        input: parseFloat(this.state.previousNumber) / 
+        parseFloat(this.state.currentNumber)
       });
     }
   }
+
+  //parseInt is not recognizing the decimal
 
   render() {
     return (
