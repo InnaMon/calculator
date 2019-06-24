@@ -48,6 +48,12 @@ class App extends Component {
     this.state.operator = "subtract";
   }
 
+  multiply = () => {
+    this.state.previousNumber = this.state.input;
+    this.setState({ input: "" });
+    this.state.operator = "multiply";
+  }
+
   evaluate = () => {
     this.state.currentNumber = this.state.input;
 
@@ -59,6 +65,11 @@ class App extends Component {
     } else if (this.state.operator === "subtract") {
       this.setState({
         input: parseInt(this.state.previousNumber) - 
+        parseInt(this.state.currentNumber)
+      });
+    } else if (this.state.operator === "multiply") {
+      this.setState({
+        input: parseInt(this.state.previousNumber) * 
         parseInt(this.state.currentNumber)
       });
     }
@@ -81,7 +92,7 @@ class App extends Component {
             <Button handleClick={this.addToInput}>4</Button>
             <Button handleClick={this.addToInput}>5</Button>
             <Button handleClick={this.addToInput}>6</Button>
-            <Button>*</Button>
+            <Button handleClick={this.multiply}>*</Button>
           </div>
           <div className="row">
             <Button handleClick={this.addToInput}>1</Button>
